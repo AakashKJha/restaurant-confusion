@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>payment</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    
+    <style>
+    html, body{
+    height: 100%;
+    overflow: hidden;
+    background: #ffe259;
+    background: var(--mango-gradient);
+}
+
+/* Variables */
+:root{
+    --mango-gradient : linear-gradient(to right, #ffa751, #ffe259);
+  
+}
+           .tab button {
+          display: block;
+          background-color: inherit;
+          color: black;
+          padding: 22px 16px;
+          width: 100%;
+          border: none;
+          outline: none;
+          text-align: left;
+          cursor: pointer;
+          transition: 0.3s;
+          font-size: 17px;
+        }
+        .tab button:hover {
+          background: #ffe259;
+    background: var(--mango-gradient);
+        }
+        
+        /* Create an active/current "tab button" class */
+        .tab button.active {
+          background-color:rgb(184, 104, 38);
+        }
+        .tab {
+          float: left;
+          border: 1px solid #ccc;
+          background-color: #f1f1f1;
+          width: 30%;
+          height: 17rem;
+        }
+        .card{
+            height: 17rem;
+        }
+        .payable{
+            margin-top: 4em;
+            margin-left: 20em;
+        }
+        .btn{
+            margin-left: 1px;
+            width: 40rem;
+        }
+        .carousel{
+          width: 100%;
+          height: 17rem;
+    max-height: 17rem;
+
+        }
+        .container1{
+          margin-top: 10rem;;
+          background-color: antiquewhite;
+          background: url('../login/assets/Wave.png');
+          background-size: cover;
+          background-repeat: no-repeat;
+        }
+
+    </style>
+</head>
+<body>
+
+   
+ 
+    <div class="container container1">
+     
+      
+        <div class="row">
+            <div class="col-5">
+              <div id="demo" class="carousel slide" data-ride="carousel">
+        
+                <div class="carousel-inner" style="width: 100%;">
+                  <div class="carousel-item active">
+                    <img src="../login/assets/undraw_authentication_fsn5.svg" width="130%" height="320px" >
+                  </div>
+                  <div class="carousel-item">
+                    <img src="../login/assets/undraw_fingerprint_swrc.svg" width="100%" height="320px" >
+                  </div>
+                  <div class="carousel-item">
+                    <img src="../login/assets/undraw_personal_data_29co.svg"width="100%" height="320px" >
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+            <div class="col-7">
+                <div class="tab">
+                    <button class="tablinks" onclick="openCity(event, 'London')" id="defaultOpen">Card</button>
+                    <button class="tablinks" onclick="openCity(event, 'Paris')">UPI</button>
+                    <button class="tablinks" onclick="openCity(event, 'Tokyo')">pay On Delivery</button>
+                  </div>
+                  <div id="London" class="tabcontent">
+                    <div class="card">
+                      <h3 class="card-header bg-info text-white"><span  style="margin-left: 4em;">Card Details</span></h3>
+                      <div class="card-body">
+                        <div class="container">
+                          <div class="row">
+                            <div class="col-6">
+                              <form id="form1">
+                                <label> Name on card :</label><br><span> <input type="text" placeholder="Name" id="card1" required></span><br><br>
+                               
+                                <label>Valid till : </label><br>
+                                <input type="month"  min="2020-11" value="2020-11" max="2025-11" ><br><br>
+                              
+                  
+                          
+                            </form>
+                             </div>
+                             <div class="col-6">
+                              <form>
+                               
+                                <label>Card No. :</label><br><span><input type="tel" id="number" maxlength="19" placeholder="xxxx xxxx xxxx xxxx"   required></span><br><br>
+                               
+                                <label>CVV :</label><br>
+                                <input type="password" maxlength="3" placeholder="123" id="card3" required>
+                  
+                          
+                            </form>
+                             </div>
+                          </div>
+                           
+                         </div>
+                      </div>
+                  </div>
+                  </div>
+                  
+                  
+                  
+                  <div id="Paris" class="tabcontent">
+                    <div class="card">
+                      <h3 class="card-header bg-info text-white"> <span  style="margin-left: 4em;">UPI payment</span></h3>
+                      <div class="card-body">
+                        <label for="mob">UPI id :</label>
+                                    <div class="container">
+                                      <div class="row">
+                                        
+                                        <div class="col-7">
+                                          <form class="was-validated">
+                                            <div class="form-group">
+                                          
+                                              <input type="tel" class="form-control"  placeholder="89954 XXXXX" name="mob" minlength="10" maxlength="10" id="upi1" required>
+                                              <div class="valid-feedback">Valid.</div>
+                                              <div class="invalid-feedback">Please fill out this field.</div>
+                                            </div>
+                                          </form>
+                                        </div>
+                                        
+                                        <div class="col-5">
+                                          <form class="was-validated">
+                                            <div class="form-group">
+                                            
+                                             <span> <input type="text" class="form-control" id="upi2" placeholder="@paytm" name="mob" pattern="@[a-z]{3,}"  minlength="3" maxlength="6" id="upi2" required></span>
+                                              <div class="valid-feedback">Valid.</div>
+                                              <div class="invalid-feedback">Please fill out this field.</div>
+                                            </div>
+                                            
+                                          </form>
+                                        </div>
+                                      </div>
+                                    </div>
+                      </div>
+                  </div>
+                  </div>
+                  
+                  <div id="Tokyo" class="tabcontent">
+                    <div class="card">
+                      <h3 class="card-header bg-info text-white"><span  style="margin-left: 4em;">Pay On Delivery</span></h3>
+                      <div class="card-body">
+                        <form class="was-validated" id="myForm3">
+                          <form class="was-validated" >
+                            <div class="form-group">
+                          
+                              <input type="tel" class="form-control"  placeholder="89954 XXXXX" name="mob" minlength="10" maxlength="10" id="payon1" required>
+                              <div class="valid-feedback">Valid.</div>
+                              <div class="invalid-feedback">Please fill out this field.</div>
+                            </div>
+                          </form>
+                            <div class="form-group form-check">
+                              <label class="form-check-label">
+                                <input class="form-check-input" type="checkbox" name="remember" required> I agree on saving my data.
+                                <div class="valid-feedback">Valid.</div>
+                                <div class="invalid-feedback">Check this checkbox to continue.</div>
+                              </label>
+                            </div>
+                            
+                        
+                          </form>
+                      </div>
+                  </div>
+                  </div>
+                  <button type="button" class=" btn btn-success" role="button" onclick="clearStorage()"><strong style="color: coral; font-size: 20px;"> Pay Rs. <span class="cart__total">0</span></strong></button>
+            </div >
+        </div>
+    </div>
+   
+    
+        
+    
+      
+          <script>
+            function card(){
+              var v1 = document.getElementById("card1").value;
+              var v2 = document.getElementById("number").value;
+              var v3 = document.getElementById("card3").value;
+              if(v1 == ""){
+                  document.getElementById("card1").style.backgroundColor = "red";
+                }
+               else if(v2== ""){
+                  document.getElementById("number").style.backgroundColor = "red";
+                }
+                else if(v3 == ""){
+                  document.getElementById("card3").style.backgroundColor = "red";
+                }
+                else{
+                   return true;
+                }
+
+            }
+            function upivalue(){
+              var v4 = document.getElementById("upi1").value;
+              var v5 = document.getElementById("upi2").value;
+              if(v4 == ""){
+                  document.getElementById("upi1").style.backgroundColor = "red";
+                }
+               else if(v5== ""){
+                  document.getElementById("upi2").style.backgroundColor = "red";
+                }
+                else{
+                  return true;
+                }
+
+            }
+            function ondelivery(){
+              var v6 = document.getElementById("payon1").value;
+              if(v6 == ""){
+                  document.getElementById("payon1").style.backgroundColor = "red";
+                }
+                else{
+                  return true;
+                }
+
+            }
+              function clearStorage(){
+                
+                if( card() ||upivalue() || ondelivery() ){
+                  localStorage.clear();
+                  window.location.href='../index.html';
+                }
+
+                
+                else{
+                 alert("Fill the payment please!")
+                }
+               
+              }
+          </script>
+      
+          <script>
+              function openCity(evt, cityName) {
+                var i, tabcontent, tablinks;
+                tabcontent = document.getElementsByClassName("tabcontent");
+                for (i = 0; i < tabcontent.length; i++) {
+                  tabcontent[i].style.display = "none";
+                }
+                tablinks = document.getElementsByClassName("tablinks");
+                for (i = 0; i < tablinks.length; i++) {
+                  tablinks[i].className = tablinks[i].className.replace(" active", "");
+                }
+                document.getElementById(cityName).style.display = "block";
+                evt.currentTarget.className += " active";
+              }
+              
+              document.getElementById("defaultOpen").click();
+              </script>
+               <script>
+                  let theInputElem = document.getElementById('number')
+                  theInputElem.focus()
+            
+      
+                  theInputElem.addEventListener('input', cardtype)
+                  function cardtype(ev) {
+                let theInput = ev.target
+                let newValue = theInput.value;
+              
+                (function removeNonDigit() {
+                  newValue = newValue.replace(/\D/g, '')
+                })();
+              
+                (function removeRedundantDigit() {
+                  newValue = newValue.slice(0, 19)
+                })();
+              
+                (function addSpaces() {
+                  var i = 4
+                  while (i < newValue.length) {
+                    newValue = newValue.slice(0, i) + ' ' + newValue.slice(i,newValue.length)
+                    i += 4 + 1
+                  }
+                })();
+              
+                theInput.value = newValue
+              }
+                </script>
+
+                
+                <script src="app.js"></script>
+                <script src="node_modules/jquery/dist/jquery.min.js"></script>
+                <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+                <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
